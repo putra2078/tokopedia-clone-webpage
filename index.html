@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokopedia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-white">
+    
+    <header class="bg-white sticky top-0 z-50">
+    <div class="bg-gray-100 px-6 py-2 text-sm mx-auto flex justify-between">
+        <div class="flex items-center">
+            <span class="text-xs text-black gap-2">
+                <i class="fa-solid fa-shipping-fast"></i>
+                <b>Gratis Ongkir + Banyak Promo</b> belanja di aplikasi 
+                <i class="fa-solid fa-chevron-right text-black"></i>
+            </span>
+        </div>
+        <nav class="flex gap-10 text-xs font-normal text-gray-600">
+            <ul class="hover:text-green-600">Tentang Tokopedia</ul>
+            <ul class="hover:text-green-600">Mulai Berjualan</ul>
+            <ul class="hover:text-green-600">Promo</ul>
+            <ul class="hover:text-green-600">Tokopedia Care</ul>
+        </nav>
+    </div>
+
+    <div class="container mx-auto px-4 py-2">
+        <div class="flex justify-between">
+            <div class="flex items-center gap-10">
+                <img src="https://p16-assets-sg.tokopedia-static.net/tos-alisg-i-cqp9s0kcd0-sg/assets-tokopedia-lite/v2/zeus/production/e5b8438b.svg" alt="Tokopedia Logo" class="w-36">
+                <button class="text-sm text-black hover:text-green-600">Kategori</button>
+            </div>
+            
+            <div class="relative flex-1 max-w mx-8">
+                <i class="fa-solid fa-search text-gray-400 absolute left-3 top-3"></i>
+                <input type="text" placeholder="Cari di Tokopedia"
+                    class="w-full px-10 py-2 text-sm placeholder:text-gray-500 border border-gray-400 rounded-lg focus:outline-none focus:border-green-600">
+            </div>
+
+            <div class="flex items-center gap-3">
+                <button class="text-gray-700 hover:text-green-600">
+                    <i class="fa-solid fa-shopping-cart text-xl"></i>
+                </button>
+                <div class="h-6 border-l border-gray-300"></div>
+                <button class="px-3 py-1.5 border border-green-600 font-bold text-sm text-green-600 rounded-lg hover:bg-green-50">Masuk</button>
+                <button class="px-3 py-1.5 bg-green-600 font-bold text-sm text-white rounded-lg hover:bg-green-700">Daftar</button>
+            </div>
+        </div>
+    </div>
+    <div class="bg-white sticky top-0 z-40 text-black text-end text-sm py-2 px-4 border-t">
+        <i class="fa-solid fa-location-dot mr-2"></i>
+            Dikirim ke <b>Jakarta Selatan</b> <i class="fa-solid fa-chevron-down"></i>
+    </div>
+</header>
+
+    <!-- Container Main (iklan atau promo) -->
+    <main class="mx-auto max-w-6xl py-6">
+        <div class="bg-gradient-to-r from-blue-300 to-blue-400 rounded-lg p-12 mb-6 relative overflow-hidden">
+            <div class="flex justify-between">
+                <div>
+                    <div class="text-3xl font-bold mb-2">techno<i class="fa-solid fa-bolt"></i></div>
+                    <div class="text-2xl font-bold mb-1">motif</div>
+                    <div class="text-4xl font-bold mt-4">Gadget Hemat</div>
+                    <div class="text-4xl font-bold">Budget</div>
+                    <div class="text-5xl font-bold mt-2">Diskon Spesial</div>
+                    <div class="text-5xl font-bold">s.d. 80%*</div>
+                    <p class="text-sm mt-4">*S&K Berlaku</p>
+                </div>
+                <div class="flex items-center gap-4">
+                    <img src="https://via.placeholder.com/200x150/333/fff?text=Monitor" alt="Monitor" class="rounded-lg">
+                    <img src="https://via.placeholder.com/120x150/fff/333?text=Gadget" alt="Gadget" class="rounded-lg">
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="mb-8">
+            <div class="flex justify-between mb-4">
+                    <div class="bg-red-600 text-white px-6 py-2 rounded-l-sm rounded-r-3xl">
+                        <b>Elektronik Rumah Tangga</b>
+                        <br>
+                        <span class="text-sm font-regular">Discount up to 50%</span>
+                    </div>
+            </div>
+
+            
+            <div class="mb-6">
+                <div class="flex justify-between mb-3">
+                    <h2 class="text-xl font-bold">Pakaian Pria <span class="text-sm font-normal text-gray-500">Mulai Dari 500rb</span></h2>
+                    <a href="#" class="text-green-600 font-semibold hover:underline">Lihat Semua</a>
+                </div>
+                <div class="relative px-6">
+                    <button onclick="scrollGrid('mensClothing', -1)" class="absolute left-0 top-1/2 py-1 z-10 text-lg">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <div class="grid grid-cols-5 gap-4 product-grid overflow-x-hidden scroll-smooth" id="mensClothing"></div>
+                    <button onclick="scrollGrid('mensClothing', 1)" class="absolute right-0 top-1/2 py-1 z-10 text-lg">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            
+            <div class="mb-6">
+                <div class="flex justify-between mb-3">
+                    <h2 class="text-xl font-bold">Perhiasan <span class="text-sm font-normal text-gray-500">Mulai Dari 200rb</span></h2>
+                    <a href="#" class="text-green-600 font-semibold hover:underline">Lihat Semua</a>
+                </div>
+                <div class="relative px-6">
+                    <button onclick="scrollGrid('jewelery', -1)" class="absolute left-0 top-1/2 py-1 z-10 text-lg">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <div class="grid grid-flow-col auto-cols-[20%] gap-4 product-grid overflow-x-hidden scroll-smooth" id="jewelery"></div>
+                    <button onclick="scrollGrid('jewelery', 1)" class="absolute right-0 top-1/2 py-1 z-10 text-lg">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            
+            <div class="mb-6">
+                <div class="flex justify-between mb-3">
+                    <h2 class="text-xl font-bold">Elektronik <span class="text-sm font-normal text-gray-500">Mulai Dari 90rb</span></h2>
+                    <a href="#" class="text-green-600 font-semibold hover:underline">Lihat Semua</a>
+                </div>
+                <div class="relative px-6">
+                    <button onclick="scrollGrid('electronics', -1)" class="absolute left-0 top-1/2 py-1 z-10 text-lg">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <div class="grid grid-flow-col auto-cols-[20%] gap-4 product-grid overflow-x-hidden scroll-smooth" id="electronics"></div>
+                    <button onclick="scrollGrid('electronics', 1)" class="absolute right-0 top-1/2 py-1 z-10 text-lg">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            
+            <div class="mb-6">
+                <div class="flex justify-between mb-3">
+                    <h2 class="text-xl font-bold">Pakaian Wanita <span class="text-sm font-normal text-gray-500">Mulai Dari 100rb</span></h2>
+                    <a href="#" class="text-green-600 font-semibold hover:underline">Lihat Semua</a>
+                </div>
+                <div class="relative px-6">
+                    <button onclick="scrollGrid('womensClothing', -1)" class="absolute left-0 top-1/2 py-1 z-10 text-lg">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <div class="grid grid-flow-col auto-cols-[20%] gap-4 product-grid overflow-x-hidden scroll-smooth" id="womensClothing"></div>
+                    <button onclick="scrollGrid('womensClothing', 1)" class="absolute right-0 top-1/2 py-1 z-10 text-lg">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="grid grid-cols-3 gap-6 mb-8">
+            <div class="bg-white rounded-lg p-6 border">
+                <div class="flex items-start gap-4">
+                    <div class="bg-orange-100 p-4 rounded-lg">
+                        <i class="fa-solid fa-shield-alt text-3xl text-orange-500"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">Transparan</h3>
+                        <p class="text-sm text-gray-600">Pembayaran Anda baru diteruskan ke penjual setelah barang Anda terima</p>
+                    </div>
+            </div>
+            </div>
+            <div class="bg-white rounded-lg p-6 border">
+                <div class="flex items-start gap-4">
+                    <div class="bg-green-100 p-4 rounded-lg">
+                        <i class="fa-solid fa-lock text-3xl text-green-500"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">Aman</h3>
+                        <p class="text-sm text-gray-600">Bandingkan review untuk berbagai online shop terpercaya se-indonesia</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg p-6 border">
+                <div class="flex items-start gap-4">
+                    <div class="bg-blue-100 p-4 rounded-lg">
+                        <i class="fa-solid fa-gift text-3xl text-blue-500"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-2">Fasilitas Escrow Gratis</h3>
+                        <p class="text-sm text-gray-600">Fasilitas Escrow (Rekening Bersama) Tokopedia tidak dikenakan biaya tambahan</p>
+                    </div>
+                </div>
+        </div>
+        </div>
+    </main>
+
+    
+    <footer class="bg-white border-t mt-12">
+        <div class="container px-4 py-6 mx-auto">
+            <div class="grid grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="font-bold mb-2">Tokopedia</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li><a href="#" class="hover:text-green-600">Tentang Tokopedia</a></li>
+                        <li><a href="#" class="hover:text-green-600">Hak Kekayaan Intelektual</a></li>
+                        <li><a href="#" class="hover:text-green-600">Karir</a></li>
+                        <li><a href="#" class="hover:text-green-600">Blog</a></li>
+                        <li><a href="#" class="hover:text-green-600">Tokopedia Affiliate Program</a></li>
+                        <li><a href="#" class="hover:text-green-600">Tokopedia B2B Digital</a></li>
+                        <li><a href="#" class="hover:text-green-600">Tokopedia Marketing Solutions</a></li>
+                        <li><a href="#" class="hover:text-green-600">Kalkulator Indeks Masa Tubuh</a></li>
+                        <li><a href="#" class="hover:text-green-600">Tokopedia Farma</a></li>
+                        <li><a href="#" class="hover:text-green-600">Promo Hari Ini</a></li>
+                        <li><a href="#" class="hover:text-green-600">Beli Lokal</a></li>
+                        <li><a href="#" class="hover:text-green-600">Promo Guncang</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-2">Beli</h4>
+                    <ul class="space-y-2 text-sm text-gray-600 mb-4">
+                        <li><a href="#" class="hover:text-green-600">Tagihan & Top Up</a></li>
+                        <li><a href="#" class="hover:text-green-600">Tokopedia COD</a></li>
+                        <li><a href="#" class="hover:text-green-600">Bebas Ongkir</a></li>
+                    </ul>
+                    <h4 class="font-bold mb-2">Jual</h4>
+                    <ul class="space-y-2 text-sm text-gray-600 mb-4">
+                        <li><a href="#" class="hover:text-green-600">Pusat Edukasi Seller</a></li>
+                        <li><a href="#" class="hover:text-green-600">Daftar Mall</a></li>
+                    </ul>
+                    <h4 class="font-bold mb-2">Bantuan dan Panduan</h4>
+                    <ul class="space-y-2 text-sm text-gray-600 mb-4">
+                        <li><a href="#" class="hover:text-green-600">Tokopedia Care</a></li>
+                        <li><a href="#" class="hover:text-green-600">Syarat dan Ketentuan</a></li>
+                        <li><a href="#" class="hover:text-green-600">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-2">Keamanan & Privasi</h4>
+                    <div class="space-y-3">
+                        <img src="images/PCI_DSS.png" alt="PCI DSS" class="border rounded w-24">
+                        <img src="images/bsi.jpg" alt="BSI" class="border rounded w-28">
+                        <img src="images/bsi.jpg" alt="BSI" class="border rounded w-28">
+                    </div>
+                    <h4 class="font-bold mt-6 mb-3 ">Ikuti Kami</h4>
+                    <div class="flex gap-3">
+                        <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-facebook text-xl"></i></a>
+                        <a href="#" class="text-blue-400 hover:text-blue-600"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-pink-600 hover:text-pink-800"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-red-600 hover:text-red-800"><i class="fab fa-youtube text-xl"></i></a>
+                    </div>
+                    
+                </div>
+                <div><h4 class="font-bold mb-3 ">Nikmati keuntungan spesial di aplikasi:</h4>
+                    <ul class="space-y-2 text-sm text-gray-600 mb-2">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-dollar text-green-600"></i>
+                            <p class="font-bold text-black">Diskon hanya di aplikasi</p>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-percent text-green-600"></i>
+                            <p class="font-bold text-black">Promo khusus aplikasi</p>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-shipping-fast text-green-600"></i>
+                            <p class="font-bold text-black">Gratis ongkir tiap hari</p>
+                        </li>
+                        <li class="items-start gap-2 font-light">
+                            Buka aplikasi dengan scan QR atau klik tombol:
+                            <div class="flex gap-2">
+                                <img src="images/qr.jpg" alt="QR Code" class="w-48">
+                                <div class="mt-6 space-y-2">
+                                    <img src="images/app-store.png" alt="App Store" class="w-full h-max">
+                                    <img src="images/play-store.png" alt="Play Store" class="w-full h-max">
+                                    <img src="images/appgallery.png" alt="Play Store" class="w-full h-max">
+                                </div>
+                            </div>
+                            <p class="text-green-600 font-semibold">Pelajari selengkapnya <i class="fa-solid fa-arrow-right"></i></p>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    
+                </div>
+            </div>
+            
+        </div>
+        <div class="flex justify-around border-t pt-6 mb-6">
+                <p class="text-sm text-gray-600">© 2009 - 2025, PT. Tokopedia. All Rights Reserved.</p>
+                <div class="flex items-center gap-2">
+                    <button class="px-4 py-2 bg-green-600 text-white rounded text-sm">Indonesia</button>
+                    <button class="px-4 py-2 border rounded text-sm">English</button>
+                </div>
+        </div>
+    </footer>
+
+    <button id="scrollTopBtn"
+        class="hidden fixed top-1/2 right-8 -translate-y-1/2 shadow shadow-md bg-gray-400 hover:bg-gray-500 text-white px-2 rounded-t-xl shadow flex items-center gap-2">
+        <div class="py-1 px-2 text-sm font-bold">
+            <div><i class="fa-solid fa-chevron-up"></i></div>
+            Top
+        </div>
+</button>
+
+        
+
+    <script>
+
+        $.ajax({
+        url: "https://fakestoreapi.com/products",
+        method: "GET",
+        dataType: "json",
+            success: function (data) {
+            const categoryMap = {
+            "men's clothing": "#mensClothing",
+            "jewelery": "#jewelery",
+            "electronics": "#electronics",
+            "women's clothing": "#womensClothing"
+            };
+            console.log(data);
+
+            data.forEach(function (item) {
+                const target = categoryMap[item.category];
+                if (target) {
+                    $(target).append(createProductCard(item));
+                }
+            });
+            },
+                error: function (xhr, status, error) {
+                    console.error("Error:", error);
+                }
+        });
+
+        function createProductCard(product) {
+            var title = product.title || 'Produk';
+            var img = product.image || (`https://via.placeholder.com/250x250/f0f0f0/666?text=${encodeURIComponent(title)}`);
+            var price = (typeof product.price === 'number') ? ('Rp' + (product.price).toLocaleString('id-ID')) : (product.price || 'Rp0');
+            var rating = (product.rating && (product.rating.rate != null)) ? product.rating.rate.toFixed(1) : '—';
+            var sold = (product.rating && product.rating.count) ? (product.rating.count + '+') : '';
+            var location = product.location || 'Indonesia';
+            var desc = product.description || '';
+            var promo = 'Promo 2.2';
+            var diskon = '50%';
+            var dummydiscon = product.price ? Math.floor(Math.random() * 50) + 10 + '' : '';
+  
+            return `
+                <div class="bg-white overflow-hidden transition cursor-pointer">
+                    <div class="relative">
+                        <img src="${img}" alt="${desc}" class="w-full h-48 object-cover rounded-lg">
+                        ${promo ? `<span class="absolute bottom-0 bg-green-600 text-white px-2 py-1 rounded text-xs font-semibold">${promo}</span>` : ''}
+                        ${diskon ? `<span class="absolute top-2 bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold">${diskon}</span>` : ''}
+                    </div>
+                    <div class="p-2">
+                        <h3 class="text-sm overflow-hidden text-ellipsis truncate h-6">${title}</h3>
+                        <div class="flex items-center font-bold text-lg mb-1 gap-2">
+                            ${price}
+                            <P class="text-xs text-gray-500 line-through font-normal">Rp. ${dummydiscon}</P>
+                        </div>
+                        <div class="flex items-center text-xs text-gray-600 mb-2">
+                            <i class="fa-solid fa-star text-yellow-400 mr-1"></i>
+                            <span class="font-semibold mr-2">${rating}</span>
+                            <span>${sold} Terjual</span>
+                        </div>
+                        <div class="flex items-center text-xs text-gray-500">
+                            <i class="fa-solid fa-check-circle text-green-600 mr-1"></i>
+                            <span class="truncate">${location}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        $(document).ready(function() {
+            
+            $('.product-grid > div').hover(
+                function() {
+                    $(this).addClass('scale-105');
+                },
+                function() {
+                    $(this).removeClass('scale-105');
+                }
+            );
+        });
+
+
+        function scrollGrid(gridId, direction) {
+            const grid = document.getElementById(gridId)
+            if (!grid) return
+
+            const scrollAmount = grid.clientWidth
+            grid.scrollLeft += direction * scrollAmount
+        }
+
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > window.innerHeight / 2) {
+                $('#scrollTopBtn').removeClass('hidden');
+            } else {
+                $('#scrollTopBtn').addClass('hidden');
+            }
+        });
+
+        $('#scrollTopBtn').click(function() {
+            $('html, body').animate({ scrollTop: 0 }, 350);
+            return false;
+        });
+
+
+    </script>
+
+</body>
+</html>
